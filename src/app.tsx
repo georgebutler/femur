@@ -1,23 +1,18 @@
 import { Canvas } from '@react-three/fiber';
+import { Physics } from '@react-three/cannon';
 import React from 'react';
-import Scene from './components/scene';
-import UserInterface from './components/userinterface';
-import Controller from './components/controller';
+import World from './components/world';
+import UserInterface from './components/ui';
 
 export default function App() {
     return (
-    <>
-        <Canvas id="canvas">
-            <Scene></Scene>
-        </Canvas>
-        <span id="overlay">
-            <span id="ui">
+        <>
+            <Canvas gl={{ antialias: true }}>
+                <Physics>
+                    <World></World>
+                </Physics>
                 <UserInterface></UserInterface>
-            </span>
-            <span id="controls">
-                <Controller></Controller>
-            </span>
-        </span>
-    </>
+            </Canvas>
+        </>
     );
 }
