@@ -10,10 +10,14 @@ export default function App() {
         <Canvas id="canvas">
             <Scene></Scene>
         </Canvas>
-        <Controller></Controller>
-        <div id="ui">
-            <UserInterface></UserInterface>
-        </div>
+        <span id="overlay">
+            <span id="ui">
+                <UserInterface></UserInterface>
+            </span>
+            <span id="controls">
+                <Controller></Controller>
+            </span>
+        </span>
     </>
     );
 }
